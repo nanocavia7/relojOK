@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<meta charset ="UTF-8">
+		<style type="text/css">
+			body{
+					background-color: #06F40F;
+			}
+			#reloj{
+					margin:40px;
+					padding:40px;
+					background-color: #1001FF;
+					border-radius:250px;
+					text-align: center;
+			}
+
+			#hora{
+					background-color: #ff0166;
+					color:black;
+					border:solid #f0f044 10px;
+					margin: 40px;
+					padding:50px;
+					text-align:center;
+					font-size:200px;	
+			}
+		</style>
+		
+    	<script>
+			function añadirCero(i){
+				if(i < 10) {
+					i = "0" + i;
+				}
+				return i;
+			}
+			
+        	function fechaActual() {
+				var hoy = new Date();
+				var h= añadirCero(hoy.getHours());
+				var m= añadirCero(hoy.getMinutes());
+				var s= añadirCero(hoy.getSeconds());
+				document.getElementById('hora').innerHTML =h+":"+m+":"+s;
+				setInterval(fechaActual, 1000);
+            }
+        </script>
+		
+    </head>
+	
+	<body onload=fechaActual()>
+	
+		<h2>¿Qué puede hacer JavaScript por mi?</h2>
+		<div id="reloj">
+		
+			<button id="hora" onclick="fechaActual()">Pulsa para la fecha y hora</button>
+		</div>
+	</body>
+	
+</html> 
